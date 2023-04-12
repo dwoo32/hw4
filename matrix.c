@@ -213,6 +213,6 @@ void transpose_matrix(int **a,  int rows, int cols)//int형 이중포인터 변�
         
     }
     print_matrix(b,cols,rows);//전치행렬 출력
-    free_matrix(b,rows,cols);
+    free_matrix(b,rows,cols);//전치행렬 동적메모리 해제
 
 }
