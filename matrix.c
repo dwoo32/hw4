@@ -24,51 +24,51 @@ int main()
     scanf("%d", &cols_B);
 
     // A 행렬 동적 메모리 할당
-    int **A = (int **) malloc(rows_A * sizeof(int *));
-    for (int i = 0; i < rows_A; i++) {
-        A[i] = (int *) malloc(cols_A * sizeof(int));
+    int **A = (int **) malloc(rows_A * sizeof(int *));//행렬A의 행만큼 동적메모리 할당
+    for (int i = 0; i < rows_A; i++) {//행렬A의 행만큼 반복
+        A[i] = (int *) malloc(cols_A * sizeof(int));//행렬A의 열만큼 동적 메모리 할당
     }
     //A행렬을 전치시킨 행렬의 동적 메모리 할당
-    int **A_t = (int **) malloc(rows_A * sizeof(int *));
-    for (int i = 0; i < cols_A; i++) {
-        A[i] = (int *) malloc(rows_A * sizeof(int));
+    int **A_t = (int **) malloc(rows_A * sizeof(int *));//행렬A_t의 행만큼 동적메모리 할당
+    for (int i = 0; i < rows_A; i++) {//행렬A_t의 행만큼 반복
+        A[i] = (int *) malloc(cols_A * sizeof(int));//행렬A의 열만큼 동적 메모리 할당
     }
 
     // A 행렬 입력 받기
     printf("Enter values for matrix A\n");
-    for (int i = 0; i < rows_A; i++){
-        for (int j = 0; j < cols_A; j++) {
-            printf("Enter element [%d][%d]: \n", i, j);
-            scanf("%d", &A[i][j]);
+    for (int i = 0; i < rows_A; i++){//행렬A의 행만큼 반복
+        for (int j = 0; j < cols_A; j++) {//행렬A의 열만큼 반복
+            printf("Enter element [%d][%d]: \n", i, j);//A행렬의 값 입력받기
+            scanf("%d", &A[i][j]);//입력받은 값 A[i][j]에 저장
         }
     }
 
     // B 행렬 동적 메모리 할당
-    int **B = (int **) malloc(rows_B * sizeof(int *));
-    for (int i = 0; i < rows_B; i++) {
-        B[i] = (int *) malloc(cols_B * sizeof(int));
+    int **B = (int **) malloc(rows_B * sizeof(int *));//행렬B의 행만큼 동적메모리 할당
+    for (int i = 0; i < rows_B; i++) {//행렬B의 행만큼 반복
+        B[i] = (int *) malloc(cols_B * sizeof(int));//행렬B의 열만큼 동적메모리 할당
     }
     //B행렬을 전치시킨 행렬의 동적 메모리 할당
-    int **B_t = (int **) malloc(rows_B * sizeof(int *));
-    for (int i = 0; i < cols_B; i++) {
-        B[i] = (int *) malloc(rows_B * sizeof(int));
+    int **B_t = (int **) malloc(rows_B * sizeof(int *));//행렬B_t의 행만큼 동적메모리 할당
+    for (int i = 0; i < rows_B; i++) {//행렬B의 행만큼 반복
+        B[i] = (int *) malloc(cols_B * sizeof(int));//행렬B의 열만큼 동적메모리 할당
     }
     // B 행렬 입력 받기
     printf("Enter values for matrix B\n");
-    for (int i = 0; i < rows_B; i++) {
-        for (int j = 0; j < cols_B; j++) {
-            printf("Enter element [%d][%d]: \n", i, j);
-            scanf("%d", &B[i][j]);
+    for (int i = 0; i < rows_B; i++) {//행렬B의 행만큼 반복
+        for (int j = 0; j < cols_B; j++) {//행렬B의 열만큼 반복
+            printf("Enter element [%d][%d]: \n", i, j);//행렬B의 값 입력받기
+            scanf("%d", &B[i][j]);//입력받은 값 B[i][j]에 저장
        }
     }
 
     // A 행렬 출력하기
     printf("Matrix A:\n");
-    print_matrix(A, rows_A, cols_A);
+    print_matrix(A, rows_A, cols_A);//print_matrix를 이용한 A행렬 출력
 
     // B 행렬 출력하기
     printf("Matrix B:\n");
-    print_matrix(B, rows_B, cols_B);
+    print_matrix(B, rows_B, cols_B);//print_matrix를 이용한 B행렬 출력
 
     addition_matrix(A,B,rows_A,cols_A,rows_B,cols_B); //addition_matrix 함수 출력
     subtraction_matrix(A,B,rows_A,cols_A,rows_B,cols_B); //substraction_matrix 함수 출력
