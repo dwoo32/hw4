@@ -77,6 +77,7 @@ int main()
     transpose_matrix(B,rows_B,cols_B);//transpose_matrix B로 함수 출력
     free_matrix(A,rows_A,cols_A); //A행렬 동적메모리 할당 해제
     free_matrix(B,rows_B,cols_B); //B행렬 동적메모리 할당 해제
+    printf("[----- [Kimdongwoo] [2020039058] -----]");
   
    
     return 0;
@@ -214,6 +215,4 @@ void transpose_matrix(int **a,  int rows, int cols)//int형 이중포인터 변�
     print_matrix(b,cols,rows);//전치행렬 출력
     free_matrix(b,rows,cols);
 
-
-    
 }
